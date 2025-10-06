@@ -152,23 +152,31 @@ export const sendBookingEmail = async ({ to, subject, booking, type }) => {
   }
 };
 
-// Send booking SMS (using Twilio or similar service)
+// Send booking SMS (using Twilio)
 export const sendBookingSMS = async (phone, booking, status = 'pending') => {
   try {
-    // TODO: Implement SMS sending with Twilio
-    // This is a placeholder for SMS functionality
-    console.log(`📱 SMS would be sent to ${phone} - Status: ${status}`);
+    // Check if Twilio is configured
+    if (!process.env.TWILIO_ACCOUNT_SID || !process.env.TWILIO_AUTH_TOKEN || !process.env.TWILIO_PHONE_NUMBER) {
+      console.log(`📱 SMS would be sent to ${phone} - Status: ${status} (Twilio not configured)`);
+      return;
+    }
 
-    /*
-    // Example Twilio implementation:
-    const twilio = require('twilio');
-    const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+    const twilio = await import('twilio');
+    const client = twilio.default(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
     let message = '';
+    const dateStr = new Date(booking.date).toLocaleDateString('en-IE', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric'
+    });
+
     if (status === 'pending') {
-      message = `Bacchus Restaurant: Your booking request for ${booking.date} at ${booking.time} has been received. We'll confirm shortly.`;
+      message = `Bacchus Restaurant: Your booking request for ${dateStr} at ${booking.time} has been received. We'll confirm shortly.`;
     } else if (status === 'confirmed') {
-      message = `Bacchus Restaurant: Your booking for ${booking.date} at ${booking.time} is CONFIRMED! See you soon!`;
+      message = `Bacchus Restaurant: Your booking for ${dateStr} at ${booking.time} is CONFIRMED! See you soon! 🍷`;
+    } else if (status === 'rejected') {
+      message = `Bacchus Restaurant: Sorry, we cannot accommodate your booking for ${dateStr} at ${booking.time}. Please call us at 09064 50433 to discuss alternatives.`;
     }
 
     await client.messages.create({
@@ -176,8 +184,10 @@ export const sendBookingSMS = async (phone, booking, status = 'pending') => {
       from: process.env.TWILIO_PHONE_NUMBER,
       to: phone
     });
-    */
+
+    console.log(`✅ SMS sent to ${phone}`);
   } catch (error) {
     console.error('❌ Error sending SMS:', error);
+    // Don't throw error - we don't want booking to fail if SMS fails
   }
 };
