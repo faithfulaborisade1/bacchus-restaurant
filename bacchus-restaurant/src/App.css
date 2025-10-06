@@ -1,0 +1,20 @@
+.App {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: #c9a961;
+  color: white;
+}
+
+::-moz-selection {
+  background: #c9a961;
+  color: white;
+}

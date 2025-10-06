@@ -1,0 +1,252 @@
+.about {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%);
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.title-divider {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #c9a961, #b8944a);
+  margin: 0 auto;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: center;
+}
+
+.about-text {
+  padding: 2rem;
+}
+
+.quote-box {
+  background: linear-gradient(135deg, #c9a961, #b8944a);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.quote-mark {
+  font-size: 4rem;
+  font-family: Georgia, serif;
+  opacity: 0.3;
+}
+
+.about-tagline {
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 2rem;
+  white-space: pre-line;
+}
+
+.chef-signature {
+  border-left: 4px solid #c9a961;
+  padding-left: 1.5rem;
+  margin-top: 2rem;
+}
+
+.signature-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #666;
+}
+
+.about-image {
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  height: 500px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover .image-overlay {
+  transform: translateY(0);
+}
+
+.overlay-content {
+  color: white;
+}
+
+.overlay-content h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.overlay-content p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(201, 169, 97, 0.3);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  color: #c9a961;
+  margin-bottom: 1rem;
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.unique-selling-point {
+  text-align: center;
+}
+
+.usp-card {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  color: white;
+  padding: 3rem;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.usp-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #c9a961, #b8944a);
+}
+
+.usp-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  color: #c9a961;
+}
+
+.usp-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+}
+
+@media screen and (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .image-wrapper {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 4rem 1.5rem;
+  }
+
+  .quote-box {
+    padding: 1.5rem;
+  }
+
+  .about-tagline {
+    font-size: 1.4rem;
+  }
+
+  .usp-card {
+    padding: 2rem;
+  }
+
+  .usp-card h3 {
+    font-size: 1.6rem;
+  }
+}

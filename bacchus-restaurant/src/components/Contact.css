@@ -1,0 +1,282 @@
+.contact {
+  padding: 6rem 2rem 3rem;
+  background: linear-gradient(180deg, #ffffff 0%, #1a1a1a 100%);
+}
+
+.contact-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contact-header .section-title {
+  color: #333;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.contact-info {
+  color: white;
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.footer-logo {
+  width: 250px;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1);
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #c9a961;
+  font-family: 'Playfair Display', serif;
+}
+
+.info-cards {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  border-color: #c9a961;
+}
+
+.info-icon {
+  font-size: 2rem;
+  color: #c9a961;
+  min-width: 40px;
+}
+
+.info-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.info-text p,
+.info-text a {
+  color: #ddd;
+  text-decoration: none;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.info-text a:hover {
+  color: #c9a961;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #c9a961 !important;
+  font-weight: 600;
+}
+
+.opening-hours {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.hours-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.hours-header svg {
+  color: #c9a961;
+  font-size: 2rem;
+}
+
+.hours-list {
+  margin-bottom: 2rem;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 1rem;
+}
+
+.hours-item:last-child {
+  border-bottom: none;
+}
+
+.day-name {
+  font-weight: 600;
+  color: #333;
+  min-width: 100px;
+}
+
+.day-hours {
+  text-align: right;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.last-order {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.booking-cta {
+  background: linear-gradient(135deg, #c9a961, #b8944a);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+}
+
+.booking-cta h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.booking-btn {
+  background: white;
+  color: #c9a961;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.booking-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.booking-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.map-section {
+  margin-bottom: 3rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.footer-divider {
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c9a961, transparent);
+  margin: 0 auto 2rem;
+}
+
+.copyright,
+.made-with,
+.est {
+  color: #999;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.made-with {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.heart-icon {
+  color: #ff6b6b;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footer-logo {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 4rem 1.5rem 2rem;
+  }
+
+  .opening-hours {
+    padding: 2rem;
+  }
+
+  .hours-item {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .day-hours {
+    text-align: left;
+  }
+
+  .info-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-icon {
+    margin: 0 auto;
+  }
+}
