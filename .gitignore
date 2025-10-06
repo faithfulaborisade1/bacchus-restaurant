@@ -9,6 +9,9 @@ backend/node_modules/
 .env.production
 backend/.env
 backend/.env.local
+bacchus-restaurant/.env
+bacchus-restaurant/.env.local
+bacchus-restaurant/.env.production
 
 # Build outputs
 dist/
