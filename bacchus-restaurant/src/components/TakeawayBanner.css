@@ -74,65 +74,16 @@
   transform: rotate(90deg);
 }
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 768px) {
   .takeaway-banner {
-    top: 100px;
+    position: fixed;
+    top: auto;
+    bottom: 1rem;
     right: 1rem;
     left: 1rem;
     max-width: calc(100% - 2rem);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .takeaway-banner {
-    position: static;
-    margin: 0.75rem 1rem;
-    max-width: 100%;
-    padding: 1rem 1.25rem;
-    top: auto;
-    right: auto;
-    left: auto;
-  }
-
-  .takeaway-content {
-    gap: 0.75rem;
-  }
-
-  .takeaway-icon {
-    font-size: 1.5rem;
-  }
-
-  .takeaway-text {
-    gap: 0.2rem;
-  }
-
-  .takeaway-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.5px;
-  }
-
-  .takeaway-offer {
-    font-size: 0.9rem;
-  }
-
-  .takeaway-discount {
-    font-size: 0.8rem;
-  }
-
-  .banner-close {
-    width: 24px;
-    height: 24px;
-    top: 0.4rem;
-    right: 0.4rem;
-    font-size: 0.8rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .takeaway-banner {
-    margin: 0.5rem 0.75rem;
-    padding: 0.85rem 1rem;
-    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
   }
 
   .takeaway-content {
@@ -143,8 +94,13 @@
     font-size: 1.3rem;
   }
 
+  .takeaway-text {
+    gap: 0.1rem;
+  }
+
   .takeaway-label {
     font-size: 0.65rem;
+    letter-spacing: 0.5px;
   }
 
   .takeaway-offer {
@@ -158,6 +114,8 @@
   .banner-close {
     width: 22px;
     height: 22px;
+    top: 0.35rem;
+    right: 0.35rem;
     font-size: 0.75rem;
   }
 }
