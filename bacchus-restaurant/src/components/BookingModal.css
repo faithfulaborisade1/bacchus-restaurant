@@ -63,8 +63,17 @@
 }
 
 .modal-subtitle {
+  color: #d4a574;
+  font-size: 1.3rem;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.modal-description {
   color: #666;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .booking-form {
@@ -295,18 +304,80 @@
   background: #b8944a;
 }
 
+@media screen and (max-width: 968px) {
+  .booking-modal {
+    padding: 2.5rem 2rem;
+  }
+
+  .modal-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .modal-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
+  .booking-modal-overlay {
+    padding: 0.5rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+
   .booking-modal {
     padding: 2rem 1.5rem;
     max-height: 95vh;
+    margin: 0 auto;
+  }
+
+  .modal-close {
+    top: 1rem;
+    right: 1rem;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .modal-header {
+    margin-bottom: 1.5rem;
   }
 
   .modal-header h2 {
     font-size: 2rem;
   }
 
+  .modal-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .modal-description {
+    font-size: 0.9rem;
+  }
+
+  .booking-form {
+    gap: 1.25rem;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    padding: 1rem 1.75rem;
+    font-size: 1rem;
   }
 
   .success-icon {
@@ -315,5 +386,86 @@
 
   .success-message h2 {
     font-size: 1.6rem;
+  }
+
+  .pending-notice {
+    padding: 1.5rem;
+  }
+
+  .notice-title {
+    font-size: 1.1rem;
+  }
+
+  .notice-text {
+    font-size: 0.9rem;
+  }
+
+  .booking-summary {
+    padding: 1.25rem;
+  }
+
+  .booking-summary h3 {
+    font-size: 1.1rem;
+  }
+
+  .booking-summary p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .booking-modal {
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .modal-subtitle {
+    font-size: 1rem;
+  }
+
+  .modal-description {
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .large-party-notice,
+  .policy-notice {
+    padding: 0.875rem;
+    font-size: 0.85rem;
+  }
+
+  .success-icon {
+    font-size: 3.5rem;
+  }
+
+  .success-message h2 {
+    font-size: 1.4rem;
+  }
+
+  .pending-notice {
+    padding: 1.25rem;
+  }
+
+  .notice-title {
+    font-size: 1rem;
+  }
+
+  .notice-text {
+    font-size: 0.85rem;
   }
 }

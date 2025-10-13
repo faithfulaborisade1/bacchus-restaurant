@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { FaBars, FaTimes, FaCalendarAlt, FaInstagram } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../assets/images/logo-transparent.png';
 import './Navbar.css';
 
-const Navbar = ({ onBookNowClick }) => {
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,51 +18,57 @@ const Navbar = ({ onBookNowClick }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
+  useEffect(() => {
+    // Close mobile menu and scroll to top when route changes
+    setIsMobileMenuOpen(false);
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const isActive = (path) => {
+    return location.pathname === path ? 'active' : '';
   };
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <div className="nav-logo">
+        <Link to="/" className="nav-logo">
           <img src={logo} alt="Bacchus Restaurant" />
-        </div>
+        </Link>
 
         <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
           <li className="nav-item">
-            <a onClick={() => scrollToSection('home')} className="nav-link">
+            <Link to="/" className={`nav-link ${isActive('/')}`} onClick={closeMobileMenu}>
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a onClick={() => scrollToSection('about')} className="nav-link">
+            <Link to="/about" className={`nav-link ${isActive('/about')}`} onClick={closeMobileMenu}>
               About
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a onClick={() => scrollToSection('menu')} className="nav-link">
+            <Link to="/menu" className={`nav-link ${isActive('/menu')}`} onClick={closeMobileMenu}>
               Menu
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a onClick={() => scrollToSection('gallery')} className="nav-link">
+            <Link to="/gallery" className={`nav-link ${isActive('/gallery')}`} onClick={closeMobileMenu}>
               Gallery
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a onClick={() => scrollToSection('contact')} className="nav-link">
-              Contact
-            </a>
+            <Link to="/reviews" className={`nav-link ${isActive('/reviews')}`} onClick={closeMobileMenu}>
+              Reviews
+            </Link>
           </li>
-          <li className="nav-item nav-cta">
-            <button onClick={() => { onBookNowClick(); setIsMobileMenuOpen(false); }} className="nav-link cta-button">
-              <FaCalendarAlt /> Book Now
-            </button>
+          <li className="nav-item">
+            <Link to="/contact" className={`nav-link ${isActive('/contact')}`} onClick={closeMobileMenu}>
+              Contact
+            </Link>
           </li>
         </ul>
 

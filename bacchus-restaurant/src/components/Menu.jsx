@@ -176,28 +176,37 @@ const Menu = () => {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="menu-item"
               >
-                <div className="item-header">
-                  <h3 className="item-name">{item.name}</h3>
-                  <span className="item-price">
-                    {typeof item.price === 'number' ? `€${item.price.toFixed(2)}` : item.price}
-                  </span>
+                <div className="item-image">
+                  {item.image ? (
+                    <img src={item.image} alt={item.name} />
+                  ) : (
+                    <div className="item-icon">{item.icon || '🍽️'}</div>
+                  )}
                 </div>
-                {item.description && (
-                  <p className="item-description">{item.description}</p>
-                )}
-                {item.allergens && item.allergens.length > 0 && (
-                  <div className="item-allergens">
-                    {item.allergens.map((allergen) => (
-                      <span
-                        key={allergen}
-                        className="allergen-badge"
-                        title={allergensList.find((a) => a.id === allergen)?.name}
-                      >
-                        {getAllergenIcon(allergen)}
-                      </span>
-                    ))}
+                <div className="item-content">
+                  <div className="item-header">
+                    <h3 className="item-name">{item.name}</h3>
+                    <span className="item-price">
+                      {typeof item.price === 'number' ? `€${item.price.toFixed(2)}` : item.price}
+                    </span>
                   </div>
-                )}
+                  {item.description && (
+                    <p className="item-description">{item.description}</p>
+                  )}
+                  {item.allergens && item.allergens.length > 0 && (
+                    <div className="item-allergens">
+                      {item.allergens.map((allergen) => (
+                        <span
+                          key={allergen}
+                          className="allergen-badge"
+                          title={allergensList.find((a) => a.id === allergen)?.name}
+                        >
+                          {getAllergenIcon(allergen)}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </motion.div>
             ))
           )}

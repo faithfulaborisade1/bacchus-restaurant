@@ -13,9 +13,7 @@ const Hero = ({ onBookNowClick }) => {
           transition={{ duration: 0.8 }}
           className="hero-title"
         >
-          Where the Shannon Flows,
-          <br />
-          Memories Grow
+          Bacchus
         </motion.h1>
 
         <motion.p
@@ -24,7 +22,16 @@ const Hero = ({ onBookNowClick }) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="hero-subtitle"
         >
-          Mediterranean-inspired cuisine along the scenic River Shannon
+          By the Shannon River, Where Every Visit Becomes a Memory
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="hero-description"
+        >
+          Exquisite Mediterranean-inspired cuisine in an elegant riverside setting
         </motion.p>
 
         <motion.div

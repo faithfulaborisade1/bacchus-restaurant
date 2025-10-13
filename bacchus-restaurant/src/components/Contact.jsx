@@ -6,7 +6,9 @@ import {
   FaMapMarkerAlt,
   FaClock,
   FaInstagram,
+  FaFacebook,
   FaHeart,
+  FaWhatsapp,
 } from 'react-icons/fa';
 import { restaurantInfo } from '../data/menuData';
 import logo from '../assets/images/logo-transparent.png';
@@ -34,77 +36,98 @@ const Contact = () => {
   return (
     <footer id="contact" className="contact" ref={ref}>
       <div className="contact-container">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="contact-header"
-        >
-          <h2 className="section-title">Visit Us</h2>
-          <div className="title-divider"></div>
-        </motion.div>
-
-        <div className="contact-content">
+        {/* Split Layout Section */}
+        <div className="contact-split">
+          {/* Left Side - Restaurant Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="contact-info"
+            transition={{ duration: 0.8 }}
+            className="contact-image-section"
           >
-            <div className="logo-section">
-              <img src={logo} alt="Bacchus Restaurant" className="footer-logo" />
-              <p className="tagline">{restaurantInfo.tagline}</p>
+            <div className="image-overlay">
+              <div className="overlay-content">
+                <h3>Experience Fine Dining</h3>
+                <p>Where tradition meets excellence</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Side - Reservations & Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="contact-info-section"
+          >
+            <div className="reservations-header">
+              <p className="reservations-subtitle">Reservations</p>
+              <h2 className="reservations-title">BOOK A TABLE</h2>
+              <p className="reservations-description">
+                Join us for an unforgettable dining experience. Our team is ready to welcome you
+                and make your visit truly special.
+              </p>
             </div>
 
-            <div className="info-cards">
-              <div className="info-card">
-                <div className="info-icon">
+            <div className="main-phone-display">
+              <FaPhone className="phone-icon" />
+              <a href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`} className="phone-number">
+                {restaurantInfo.phone}
+              </a>
+            </div>
+
+            <p className="family-tagline">LET OUR FAMILY LOOK AFTER YOURS</p>
+
+            {/* All Contact Details */}
+            <div className="contact-details-grid">
+              <div className="detail-item">
+                <div className="detail-icon">
                   <FaMapMarkerAlt />
                 </div>
-                <div className="info-text">
-                  <h3>Location</h3>
+                <div className="detail-text">
+                  <h4>Location</h4>
                   <p>{restaurantInfo.address}</p>
                   <a
                     href="https://maps.google.com/?q=Custume+Pier+Athlone"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="map-link"
+                    className="detail-link"
                   >
-                    Get Directions
+                    Get Directions →
                   </a>
                 </div>
               </div>
 
-              <div className="info-card">
-                <div className="info-icon">
-                  <FaPhone />
+              <div className="detail-item">
+                <div className="detail-icon">
+                  <FaWhatsapp />
                 </div>
-                <div className="info-text">
-                  <h3>Phone</h3>
-                  <a href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`}>
-                    {restaurantInfo.phone}
+                <div className="detail-text">
+                  <h4>WhatsApp</h4>
+                  <a href="https://wa.me/353834632121" target="_blank" rel="noopener noreferrer">
+                    083 463 2121
                   </a>
                 </div>
               </div>
 
-              <div className="info-card">
-                <div className="info-icon">
+              <div className="detail-item">
+                <div className="detail-icon">
                   <FaEnvelope />
                 </div>
-                <div className="info-text">
-                  <h3>Email</h3>
+                <div className="detail-text">
+                  <h4>Email</h4>
                   <a href={`mailto:${restaurantInfo.email}`}>
                     {restaurantInfo.email}
                   </a>
                 </div>
               </div>
 
-              <div className="info-card">
-                <div className="info-icon">
+              <div className="detail-item">
+                <div className="detail-icon">
                   <FaInstagram />
                 </div>
-                <div className="info-text">
-                  <h3>Follow Us</h3>
+                <div className="detail-text">
+                  <h4>Instagram</h4>
                   <a
                     href={`https://instagram.com/${restaurantInfo.instagram.replace('@', '')}`}
                     target="_blank"
@@ -114,39 +137,22 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-            </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="opening-hours"
-          >
-            <div className="hours-header">
-              <FaClock />
-              <h3>Opening Hours</h3>
-            </div>
-            <div className="hours-list">
-              {Object.entries(restaurantInfo.openingHours).map(([day, hours]) => (
-                <div key={day} className="hours-item">
-                  <span className="day-name">{getDayName(day)}</span>
-                  <span className="day-hours">
-                    {hours.open} - {hours.close}
-                    <span className="last-order">(Last orders {hours.lastOrder})</span>
-                  </span>
+              <div className="detail-item">
+                <div className="detail-icon">
+                  <FaFacebook />
                 </div>
-              ))}
-            </div>
-
-            <div className="booking-cta">
-              <h4>Ready to dine with us?</h4>
-              <a href={`tel:${restaurantInfo.phone.replace(/\s/g, '')}`} className="booking-btn">
-                <FaPhone /> Book Your Table
-              </a>
-              <p className="booking-note">
-                Please arrive within 15 minutes of your reservation time.
-              </p>
+                <div className="detail-text">
+                  <h4>Facebook</h4>
+                  <a
+                    href="https://www.facebook.com/bacchusrestaurantathlone"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    @bacchusrestaurantathlone
+                  </a>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

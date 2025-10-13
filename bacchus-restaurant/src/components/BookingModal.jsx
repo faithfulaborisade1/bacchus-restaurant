@@ -199,7 +199,8 @@ const BookingModal = ({ isOpen, onClose }) => {
             <>
               <div className="modal-header">
                 <h2>Reserve a Table</h2>
-                <p className="modal-subtitle">Book your unforgettable dining experience</p>
+                <p className="modal-subtitle">We look forward to welcoming you</p>
+                <p className="modal-description">Book your unforgettable riverside dining experience</p>
               </div>
 
               <form className="booking-form" onSubmit={handleSubmit}>

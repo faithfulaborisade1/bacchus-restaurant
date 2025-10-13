@@ -92,11 +92,9 @@ const About = () => {
           className="unique-selling-point"
         >
           <div className="usp-card">
-            <h3>The Only Restaurant Along the River Shannon</h3>
+            <h3>Athlone's Premier Riverside Dining Experience</h3>
             <p>
-              Immerse yourself in the tranquil beauty of the Shannon while savoring exquisite
-              Mediterranean cuisine. Our unique riverside location offers unparalleled views and an
-              unforgettable dining atmosphere.
+              Indulge in the refined elegance of waterfront dining where the majestic Shannon River provides a breathtaking backdrop to your culinary journey. Our distinguished riverside location offers an unparalleled ambiance of sophistication and tranquility, creating moments of pure luxury with every visit.
             </p>
           </div>
         </motion.div>

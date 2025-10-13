@@ -1,0 +1,381 @@
+.reviews {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+}
+
+.reviews-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.reviews-header .section-title {
+  color: #1a1a1a;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.title-divider {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #d4a574, transparent);
+  margin: 1.5rem auto;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 450px));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  justify-content: center;
+}
+
+.loading-message,
+.no-reviews-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.loading-message {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.review-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid #f5f5f5;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 50px rgba(212, 165, 116, 0.15);
+  border-color: #d4a574;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.review-platform {
+  display: flex;
+  align-items: center;
+}
+
+.platform-icon {
+  font-size: 1.8rem;
+}
+
+.platform-icon.google {
+  color: #4285f4;
+}
+
+.platform-icon.tripadvisor {
+  color: #00af87;
+}
+
+.quote-icon {
+  font-size: 2rem;
+  color: #d4a574;
+  opacity: 0.2;
+}
+
+.review-rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.star {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+}
+
+.star.filled {
+  color: #ffa500;
+}
+
+.review-text {
+  color: #4a4a4a;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.review-images {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.review-image {
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-image:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.review-footer {
+  border-top: 2px solid #f5f5f5;
+  padding-top: 1rem;
+}
+
+.reviewer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reviewer-name {
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.review-date {
+  color: #999;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.reviews-cta {
+  background: linear-gradient(135deg, #c9a961, #b8944a);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 15px 50px rgba(201, 169, 97, 0.25);
+}
+
+.reviews-cta h3 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  font-family: 'Playfair Display', serif;
+  color: white;
+}
+
+.reviews-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.review-btn {
+  background: white;
+  color: #333;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-size: 1rem;
+}
+
+.review-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+.google-btn svg {
+  color: #4285f4;
+}
+
+.tripadvisor-btn svg {
+  color: #00af87;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 968px) {
+  .reviews {
+    padding: 5rem 1.5rem;
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+  }
+
+  .review-card {
+    padding: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .reviews {
+    padding: 4rem 1.5rem;
+  }
+
+  .reviews-header {
+    margin-bottom: 3rem;
+  }
+
+  .reviews-header .section-title {
+    font-size: 2.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .review-card {
+    padding: 1.5rem;
+  }
+
+  .platform-icon {
+    font-size: 1.5rem;
+  }
+
+  .quote-icon {
+    font-size: 1.5rem;
+  }
+
+  .review-text {
+    font-size: 0.95rem;
+  }
+
+  .reviews-cta {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .reviews-cta h3 {
+    font-size: 1.75rem;
+  }
+
+  .reviews-cta p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .review-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .reviews {
+    padding: 3rem 1rem;
+  }
+
+  .reviews-header .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .review-card {
+    padding: 1.25rem;
+  }
+
+  .platform-icon {
+    font-size: 1.3rem;
+  }
+
+  .review-rating {
+    gap: 0.15rem;
+  }
+
+  .star {
+    font-size: 1rem;
+  }
+
+  .review-text {
+    font-size: 0.9rem;
+  }
+
+  .reviewer-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .reviewer-name {
+    font-size: 0.95rem;
+  }
+
+  .review-date {
+    font-size: 0.85rem;
+  }
+
+  .reviews-cta {
+    padding: 2rem 1.25rem;
+  }
+
+  .reviews-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .reviews-cta p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .review-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}

@@ -24,70 +24,80 @@ export const starters = [
     name: 'Soup of the Day',
     price: 7.50,
     allergens: ['gluten', 'milk', 'celery'],
-    description: ''
+    description: '',
+    icon: '🍲'
   },
   {
     id: 2,
     name: 'Poached Pear Salad',
     price: 11.50,
     allergens: ['milk', 'soybeans', 'sulfur'],
-    description: 'Port wine-poached pear, grilled goat cheese, and Parma ham on fresh greens'
+    description: 'Port wine-poached pear, grilled goat cheese, and Parma ham on fresh greens',
+    icon: '🥗'
   },
   {
     id: 3,
     name: 'Halloumi Cheese Salad',
     price: 11.00,
     allergens: ['milk', 'soybeans'],
-    description: 'Grilled Cypriot halloumi with crisp salad leaves, toasted nuts, and mango strips'
+    description: 'Grilled Cypriot halloumi with crisp salad leaves, toasted nuts, and mango strips',
+    icon: '🥗'
   },
   {
     id: 4,
     name: 'Meze Platter (For One)',
     price: 12.50,
     allergens: ['gluten', 'milk', 'soybeans', 'sesame'],
-    description: 'Stuffed vine leaves, hummus, ezme, feta, tzatziki, and garlic bread'
+    description: 'Stuffed vine leaves, hummus, ezme, feta, tzatziki, and garlic bread',
+    icon: '🫓'
   },
   {
     id: 5,
     name: 'Meze Platter (For Two)',
     price: 19.00,
     allergens: ['gluten', 'milk', 'soybeans', 'sesame'],
-    description: 'Stuffed vine leaves, hummus, ezme, feta, tzatziki, and garlic bread'
+    description: 'Stuffed vine leaves, hummus, ezme, feta, tzatziki, and garlic bread',
+    icon: '🫓'
   },
   {
     id: 6,
     name: 'Garlic King Prawns',
     price: 11.50,
     allergens: ['crustaceans', 'sulfur'],
-    description: 'Sautéed in garlic, chili flakes, white wine, and olive oil'
+    description: 'Sautéed in garlic, chili flakes, white wine, and olive oil',
+    icon: '🦐'
   },
   {
     id: 7,
     name: 'Grilled Turkish Sucuk',
     price: 11.50,
     allergens: ['gluten', 'eggs', 'milk'],
-    description: 'Traditional Turkish garlic sausage with egg, melted mozzarella, and garlic bread'
+    description: 'Traditional Turkish garlic sausage with egg, melted mozzarella, and garlic bread',
+    icon: '🌭'
   },
   {
     id: 8,
     name: 'Buffalo Chicken Wings',
     price: 10.50,
     allergens: ['milk', 'celery', 'mustard'],
-    description: 'Served with house salad and blue cheese dip'
+    description: 'Served with house salad and blue cheese dip',
+    icon: '🍗'
   },
   {
     id: 9,
     name: 'Chicken Skewer',
     price: 11.50,
     allergens: ['celery', 'milk'],
-    description: 'Mediterranean-marinated chicken served with seasonal salad'
+    description: 'Mediterranean-marinated chicken served with seasonal salad',
+    icon: '🍢'
   },
   {
     id: 10,
     name: 'Garlic Bread with Cheese',
     price: 5.50,
     allergens: ['gluten', 'milk'],
-    description: ''
+    description: '',
+    icon: '🥖'
   }
 ];
 
@@ -97,77 +107,88 @@ export const mainCourses = [
     name: 'Traditional Chicken \'Sach Tava\'',
     price: 25.50,
     allergens: ['celery'],
-    description: 'Sizzling dish of chicken, peppers, garlic, onion and tomato served with rice'
+    description: 'Sizzling dish of chicken, peppers, garlic, onion and tomato served with rice',
+    icon: '🍛'
   },
   {
     id: 2,
     name: 'Seafood Medley Casserole',
     price: 29.50,
     allergens: ['gluten', 'crustaceans', 'fish', 'milk', 'sulfur', 'molluscs'],
-    description: 'Salmon, cod, prawns, calamari, mussels in creamy sauce, Parmesan crust, rice'
+    description: 'Salmon, cod, prawns, calamari, mussels in creamy sauce, Parmesan crust, rice',
+    icon: '🦞'
   },
   {
     id: 3,
     name: 'Wild Atlantic Salmon',
     price: 25.00,
     allergens: ['fish', 'milk'],
-    description: 'Baked salmon on green beans and squash purée with dill cream'
+    description: 'Baked salmon on green beans and squash purée with dill cream',
+    icon: '🐟'
   },
   {
     id: 4,
     name: 'Seabream Fillet',
     price: 26.50,
     allergens: ['fish', 'milk'],
-    description: 'Baked sea bream with green beans, squash purée and dill cream'
+    description: 'Baked sea bream with green beans, squash purée and dill cream',
+    icon: '🐟'
   },
   {
     id: 5,
     name: 'Confit Duck Leg',
     price: 24.50,
     allergens: ['gluten', 'eggs', 'sulfur'],
-    description: 'Duck leg & spring rolls with braised red cabbage in orange-anise glaz'
+    description: 'Duck leg & spring rolls with braised red cabbage in orange-anise glaz',
+    icon: '🦆'
   },
   {
     id: 6,
     name: 'Mediterranean Lamb Casserole',
     price: 27.00,
     allergens: ['milk'],
-    description: 'Diced lamb with vegetables in light chili tomato sauce, topped with cheese, served with rice'
+    description: 'Diced lamb with vegetables in light chili tomato sauce, topped with cheese, served with rice',
+    icon: '🍖'
   },
   {
     id: 7,
     name: 'Lamb Confit in Filo Pastry',
     price: 33.00,
     allergens: ['gluten', 'crustaceans', 'eggs', 'milk', 'sulfur'],
-    description: 'Slow-cooked lamb in filo pastry, served with bed of coriander risotto and red wine juice'
+    description: 'Slow-cooked lamb in filo pastry, served with bed of coriander risotto and red wine juice',
+    icon: '🥩'
   },
   {
     id: 8,
     name: '15oz T-Bone Steak',
     price: 39.00,
     allergens: ['fish', 'milk', 'sulfur'],
-    description: 'Served with grilled prawn, mushrooms, chips, and trio sauce'
+    description: 'Served with grilled prawn, mushrooms, chips, and trio sauce',
+    icon: '🥩'
   },
   {
     id: 9,
     name: '12oz Irish Striploin',
     price: 32.00,
     allergens: ['milk', 'sulfur'],
-    description: 'Grilled with chips, mushrooms, onions, peppercorn or garlic butter sauce'
+    description: 'Grilled with chips, mushrooms, onions, peppercorn or garlic butter sauce',
+    icon: '🥩'
   },
   {
     id: 10,
     name: 'Seafood Platter',
     price: 'Ask',
     allergens: ['fish', 'crustaceans', 'sulfur', 'molluscs'],
-    description: 'A generous variety of fresh seafood – please ask for today\'s selection'
+    description: 'A generous variety of fresh seafood – please ask for today\'s selection',
+    icon: '🦐'
   },
   {
     id: 11,
     name: 'Mixed Grill Platter',
     price: 35.00,
     allergens: ['gluten', 'milk', 'celery', 'mustard'],
-    description: 'Kofte, sucuk, liver, lamb chop, chicken shish, salsa, and bulgur'
+    description: 'Kofte, sucuk, liver, lamb chop, chicken shish, salsa, and bulgur',
+    icon: '🍗'
   }
 ];
 
@@ -177,49 +198,56 @@ export const pizzas = [
     name: 'Margherita',
     price: 13.00,
     allergens: ['gluten', 'milk'],
-    description: 'Classic tomato and mozzarella'
+    description: 'Classic tomato and mozzarella',
+    icon: '🍕'
   },
   {
     id: 2,
     name: 'BBQ Chicken',
     price: 16.50,
     allergens: ['gluten', 'milk'],
-    description: 'With bacon, peppers, and onions'
+    description: 'With bacon, peppers, and onions',
+    icon: '🍕'
   },
   {
     id: 3,
     name: 'Pepperoni',
     price: 15.50,
     allergens: ['gluten', 'milk'],
-    description: ''
+    description: '',
+    icon: '🍕'
   },
   {
     id: 4,
     name: 'Mighty Meat',
     price: 18.50,
     allergens: ['gluten', 'milk'],
-    description: 'Chicken, pepperoni, ham and bacon'
+    description: 'Chicken, pepperoni, ham and bacon',
+    icon: '🍕'
   },
   {
     id: 5,
     name: 'Hawaiian',
     price: 15.00,
     allergens: ['gluten', 'milk'],
-    description: 'Ham and pineapple'
+    description: 'Ham and pineapple',
+    icon: '🍕'
   },
   {
     id: 6,
     name: 'Cheese Pide',
     price: 17.00,
     allergens: ['gluten', 'milk'],
-    description: 'Halloumi, goat cheese, and mozzarella on traditional light pizza dough'
+    description: 'Halloumi, goat cheese, and mozzarella on traditional light pizza dough',
+    icon: '🫓'
   },
   {
     id: 7,
     name: 'Sucuk & Cheese Pide',
     price: 17.50,
     allergens: ['gluten', 'milk'],
-    description: 'Flatbread topped with spicy Turkish sausage and cheese'
+    description: 'Flatbread topped with spicy Turkish sausage and cheese',
+    icon: '🫓'
   }
 ];
 
@@ -229,56 +257,64 @@ export const pastas = [
     name: 'Bacchus Fettuccine',
     price: 16.95,
     allergens: ['gluten', 'milk', 'sulfur'],
-    description: 'Garlic chicken, bacon, broccoli in creamy wine sauce'
+    description: 'Garlic chicken, bacon, broccoli in creamy wine sauce',
+    icon: '🍝'
   },
   {
     id: 2,
     name: 'Seafood Spaghetti',
     price: 22.00,
     allergens: ['gluten', 'crustaceans', 'milk', 'sulfur', 'molluscs'],
-    description: 'Mussels, prawns, calamari in creamy pink wine sauce'
+    description: 'Mussels, prawns, calamari in creamy pink wine sauce',
+    icon: '🍝'
   },
   {
     id: 3,
     name: 'Vegetarian Penne',
     price: 16.50,
     allergens: ['gluten', 'milk'],
-    description: 'Mushrooms, onion, broccoli, mixes peppers, tomato sauce'
+    description: 'Mushrooms, onion, broccoli, mixes peppers, tomato sauce',
+    icon: '🍝'
   },
   {
     id: 4,
     name: 'Spaghetti Carbonara',
     price: 15.50,
     allergens: ['gluten', 'eggs', 'milk'],
-    description: 'Smoky pancetta in a rich creamy egg sauce'
+    description: 'Smoky pancetta in a rich creamy egg sauce',
+    icon: '🍝'
   },
   {
     id: 5,
     name: 'Penne Alla Vodka',
     price: 17.00,
     allergens: ['gluten', 'milk', 'sulfur'],
-    description: 'Bacon, peas, onion in vodka pink sauce'
+    description: 'Bacon, peas, onion in vodka pink sauce',
+    icon: '🍝'
   },
   {
     id: 6,
     name: 'Fettuccine Español',
     price: 18.00,
     allergens: ['gluten', 'milk'],
-    description: 'Chorizo, sun-dried tomato, mushrooms, pink sauce'
+    description: 'Chorizo, sun-dried tomato, mushrooms, pink sauce',
+    icon: '🍝'
   },
   {
     id: 7,
     name: 'Seafood Risotto',
     price: 22.00,
     allergens: ['crustaceans', 'milk', 'sulfur', 'molluscs'],
-    description: 'Mussels, prawns, calamari, wine sauce'
+    description: 'Mussels, prawns, calamari, wine sauce',
+    icon: '🍚'
   },
   {
     id: 8,
     name: 'Wild Mushroom & Spinach Risotto',
     price: 18.50,
     allergens: ['milk'],
-    description: 'Mushrooms, spinach, creamy sauce'
+    description: 'Mushrooms, spinach, creamy sauce',
+    icon: '🍚'
   }
 ];
 
@@ -288,42 +324,48 @@ export const desserts = [
     name: 'Baklava',
     price: 7.50,
     allergens: ['gluten', 'milk', 'nuts'],
-    description: 'Traditional Turkish layered pastry with pistachio and syrup'
+    description: 'Traditional Turkish layered pastry with pistachio and syrup',
+    icon: '🥮'
   },
   {
     id: 2,
     name: 'Malteser Cheesecake',
     price: 7.50,
     allergens: ['gluten', 'eggs', 'milk'],
-    description: 'Homemade, multi-layered, served with chocolate sauce'
+    description: 'Homemade, multi-layered, served with chocolate sauce',
+    icon: '🍰'
   },
   {
     id: 3,
     name: 'Chocolate Gateau',
     price: 7.50,
     allergens: ['gluten', 'eggs', 'milk'],
-    description: 'Rich cake with Chantilly cream and chocolate sauce'
+    description: 'Rich cake with Chantilly cream and chocolate sauce',
+    icon: '🎂'
   },
   {
     id: 4,
     name: 'Poached Pear',
     price: 7.50,
     allergens: ['eggs', 'milk'],
-    description: 'Served with meringue and Chantilly cream'
+    description: 'Served with meringue and Chantilly cream',
+    icon: '🍐'
   },
   {
     id: 5,
     name: 'Selection of Ice Cream',
     price: 7.50,
     allergens: ['milk'],
-    description: 'Vanilla, strawberry, chocolate, or mint'
+    description: 'Vanilla, strawberry, chocolate, or mint',
+    icon: '🍨'
   },
   {
     id: 6,
     name: 'Apple Pie',
     price: 7.50,
     allergens: ['gluten', 'milk'],
-    description: 'Served warm with Chantilly cream'
+    description: 'Served warm with Chantilly cream',
+    icon: '🥧'
   }
 ];
 
@@ -332,27 +374,31 @@ export const kidsMenu = [
     id: 1,
     name: 'Goujons & Chips',
     price: 8.00,
-    allergens: ['gluten', 'eggs', 'milk']
+    allergens: ['gluten', 'eggs', 'milk'],
+    icon: '🍟'
   },
   {
     id: 2,
     name: 'Sausage & Chips',
     price: 8.00,
-    allergens: ['gluten', 'milk']
+    allergens: ['gluten', 'milk'],
+    icon: '🌭'
   },
   {
     id: 3,
     name: 'Penne Pasta',
     price: 8.00,
     allergens: ['gluten', 'milk'],
-    description: 'Served with creamy or tomato sauce'
+    description: 'Served with creamy or tomato sauce',
+    icon: '🍝'
   },
   {
     id: 4,
     name: 'Kids Pizza',
     price: 8.00,
     allergens: ['gluten', 'milk'],
-    description: 'Mini Margherita or Pepperoni'
+    description: 'Mini Margherita or Pepperoni',
+    icon: '🍕'
   }
 ];
 

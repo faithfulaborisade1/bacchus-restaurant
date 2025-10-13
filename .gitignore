@@ -44,3 +44,7 @@ desktop.ini
 
 # Production files (keep local only)
 .vercel/
+
+# Documentation files
+*.md
+!README.md

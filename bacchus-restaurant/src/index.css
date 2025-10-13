@@ -11,16 +11,18 @@
 }
 
 :root {
-  /* Colors */
-  --primary-gold: #c9a961;
+  /* Colors - Improved for luxury feel and better visibility */
+  --primary-gold: #d4a574;
   --primary-gold-dark: #b8944a;
   --primary-gold-darker: #a67d3d;
-  --dark: #1a1a1a;
-  --dark-light: #2d2d2d;
-  --text-dark: #333;
-  --text-light: #666;
-  --text-lighter: #999;
-  --bg-light: #f9f9f9;
+  --dark: #0a0a0a;
+  --dark-light: #1a1a1a;
+  --dark-lighter: #2d2d2d;
+  --text-dark: #1a1a1a;
+  --text-light: #4a4a4a;
+  --text-lighter: #666;
+  --bg-light: #fafafa;
+  --bg-cream: #f5f3f0;
   --white: #ffffff;
 
   /* Typography */

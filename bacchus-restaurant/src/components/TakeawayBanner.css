@@ -1,0 +1,109 @@
+.takeaway-banner {
+  position: fixed;
+  top: 140px;
+  right: 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 2px solid #d4a574;
+  padding: 1.25rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  max-width: 380px;
+  backdrop-filter: blur(10px);
+}
+
+.takeaway-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.takeaway-icon {
+  font-size: 2rem;
+  color: #d4a574;
+  flex-shrink: 0;
+}
+
+.takeaway-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.takeaway-label {
+  font-size: 0.85rem;
+  color: #d4a574;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.takeaway-offer {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+.takeaway-discount {
+  font-size: 0.95rem;
+  color: #d4a574;
+  font-weight: 500;
+}
+
+.banner-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.banner-close:hover {
+  background: #d4a574;
+  transform: rotate(90deg);
+}
+
+@media screen and (max-width: 768px) {
+  .takeaway-banner {
+    position: static;
+    margin: 1rem;
+    max-width: 100%;
+    top: auto;
+    right: auto;
+  }
+
+  .takeaway-content {
+    gap: 0.75rem;
+  }
+
+  .takeaway-icon {
+    font-size: 1.5rem;
+  }
+
+  .takeaway-text {
+    gap: 0.15rem;
+  }
+
+  .takeaway-label {
+    font-size: 0.75rem;
+  }
+
+  .takeaway-offer {
+    font-size: 1rem;
+  }
+
+  .takeaway-discount {
+    font-size: 0.85rem;
+  }
+}
