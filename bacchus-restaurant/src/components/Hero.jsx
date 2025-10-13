@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import './Hero.css';
 
@@ -43,12 +44,9 @@ const Hero = ({ onBookNowClick }) => {
           <button onClick={onBookNowClick} className="hero-btn primary">
             <FaCalendarAlt /> Book a Table
           </button>
-          <a
-            onClick={() => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })}
-            className="hero-btn secondary"
-          >
+          <Link to="/menu" className="hero-btn secondary">
             View Menu
-          </a>
+          </Link>
         </motion.div>
 
         <motion.div
