@@ -45,6 +45,22 @@ const Reviews = () => {
       date: 'November 2025',
       text: 'Food, service, atmosphere - everything was top class. Beautiful views of Shannon, warm and cosy inside, very friendly staff. I had seafood medley and my partner had a steak. Both soooo yummy and generous portions too. They have a few tables on the terrace too, with a 5* view. Highly recommend and will be back 👍',
     },
+    {
+      id: 4,
+      name: 'Lana K',
+      platform: 'tripadvisor',
+      rating: 5,
+      date: 'June 2024',
+      text: 'My family and I went for lunch here for Father\'s Day last weekend and I couldn\'t recommend this restaurant more. It was great value for money, the food was amazing and the staff were so lovely and helpful. Well done!! ⭐',
+    },
+    {
+      id: 5,
+      name: 'Claire N',
+      platform: 'tripadvisor',
+      rating: 5,
+      date: 'May 2024',
+      text: 'Visited Bacchus with my husband & my friends on Saturday & was thoroughly impressed. The staff were friendly & helpful & made the experience very enjoyable. Personally I had the Chef Recommendation dish of Confit of Lamb. The flavour was amazing & portions were extremely generous. Bacchus wine list looked quite good & beers available were good too. We couldn\'t squeeze dessert in but saw a few go past & wished we could! All in all, a great dining experience & will definitely be back',
+    },
   ];
 
   const renderStars = (rating) => {
