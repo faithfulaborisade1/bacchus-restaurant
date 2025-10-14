@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import MenuPage from './pages/MenuPage';
+import TakeawayMenuPage from './pages/TakeawayMenuPage';
 import GalleryPage from './pages/GalleryPage';
 import ReviewsPage from './pages/ReviewsPage';
 import ContactPage from './pages/ContactPage';
@@ -48,6 +49,16 @@ function App() {
             <div className="App">
               <Navbar />
               <MenuPage />
+              <Footer />
+            </div>
+          }
+        />
+        <Route
+          path="/takeaway-menu"
+          element={
+            <div className="App">
+              <Navbar />
+              <TakeawayMenuPage />
               <Footer />
             </div>
           }

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaCalendarAlt, FaMapMarkerAlt, FaUtensils, FaShoppingBag } from 'react-icons/fa';
 import './Hero.css';
 
 const Hero = ({ onBookNowClick }) => {
@@ -45,7 +45,10 @@ const Hero = ({ onBookNowClick }) => {
             <FaCalendarAlt /> Book a Table
           </button>
           <Link to="/menu" className="hero-btn secondary">
-            View Menu
+            <FaUtensils /> Restaurant Menu
+          </Link>
+          <Link to="/takeaway-menu" className="hero-btn secondary">
+            <FaShoppingBag /> Take-Away Menu
           </Link>
         </motion.div>
 

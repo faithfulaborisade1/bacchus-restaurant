@@ -1,0 +1,197 @@
+.menu-selection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  padding: 4rem 2rem;
+}
+
+.menu-selection-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.85), rgba(26, 26, 26, 0.75));
+  z-index: 1;
+}
+
+.menu-selection-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.menu-selection-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.8);
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  letter-spacing: 3px;
+  font-style: italic;
+}
+
+.menu-selection-subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  margin-bottom: 4rem;
+  opacity: 0.95;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
+  color: #d4a574;
+  text-transform: capitalize;
+}
+
+.menu-selection-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.menu-selection-btn {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(212, 165, 116, 0.5);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.menu-selection-btn:hover {
+  background: rgba(212, 165, 116, 0.15);
+  border-color: #d4a574;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(212, 165, 116, 0.3);
+}
+
+.menu-icon {
+  font-size: 2.5rem;
+  color: #d4a574;
+  transition: all 0.3s ease;
+}
+
+.menu-selection-btn:hover .menu-icon {
+  transform: scale(1.1);
+  color: #e6b87d;
+}
+
+.menu-selection-btn span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.menu-selection-btn.restaurant {
+  border-color: rgba(212, 165, 116, 0.5);
+}
+
+.menu-selection-btn.takeaway {
+  border-color: rgba(212, 165, 116, 0.5);
+}
+
+@media screen and (max-width: 968px) {
+  .menu-selection {
+    background-attachment: scroll;
+    min-height: 80vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .menu-selection-subtitle {
+    margin-bottom: 3rem;
+  }
+
+  .menu-selection-buttons {
+    gap: 1.5rem;
+  }
+
+  .menu-selection-btn {
+    padding: 2rem 1.5rem;
+    min-width: 240px;
+  }
+
+  .menu-icon {
+    font-size: 2rem;
+  }
+
+  .menu-selection-btn span {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-selection {
+    background-attachment: scroll;
+    padding: 2rem 1rem;
+  }
+
+  .menu-selection-title {
+    margin-bottom: 0.8rem;
+  }
+
+  .menu-selection-subtitle {
+    margin-bottom: 2.5rem;
+  }
+
+  .menu-selection-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .menu-selection-btn {
+    max-width: 400px;
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu-selection {
+    padding: 2rem 0.5rem;
+  }
+
+  .menu-selection-btn {
+    min-width: 240px;
+    padding: 1.8rem 1.2rem;
+  }
+
+  .menu-icon {
+    font-size: 1.8rem;
+  }
+
+  .menu-selection-btn span {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
+}

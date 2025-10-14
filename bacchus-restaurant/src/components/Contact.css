@@ -17,21 +17,21 @@
 
 /* Left Side - Image Section */
 .contact-image-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800') center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4rem 3rem;
   position: relative;
-  z-index: 1;
 }
 
 .image-overlay {
   text-align: center;
   color: white;
-  z-index: 2;
   position: relative;
+  z-index: 1;
+  background: none;
 }
 
 .overlay-content h3 {
@@ -57,6 +57,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 .reservations-header {
@@ -335,11 +336,34 @@
   }
 
   .contact-image-section {
-    min-height: 400px;
+    min-height: 300px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .image-overlay {
+    margin-top: 0;
+  }
+
+  .overlay-content {
+    padding: 0;
+    background: none;
+  }
+
+  .overlay-content h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .overlay-content p {
+    font-size: 1.1rem;
   }
 
   .contact-info-section {
     padding: 3rem 2rem;
+    background: white;
   }
 
   .contact-details-grid {
@@ -380,20 +404,35 @@
 
 @media screen and (max-width: 768px) {
   .contact-image-section {
-    min-height: 350px;
-    padding: 3rem 2rem;
+    min-height: 280px;
+    padding: 2rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .image-overlay {
+    margin-top: 0;
+  }
+
+  .overlay-content {
+    padding: 0;
+    background: none;
   }
 
   .overlay-content h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
   }
 
   .overlay-content p {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .contact-info-section {
     padding: 2.5rem 1.5rem;
+    background: white;
   }
 
   .reservations-title {
@@ -445,20 +484,35 @@
 
 @media screen and (max-width: 480px) {
   .contact-image-section {
-    min-height: 300px;
-    padding: 2rem 1.5rem;
+    min-height: 250px;
+    padding: 1.5rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .image-overlay {
+    margin-top: 0;
+  }
+
+  .overlay-content {
+    padding: 0;
+    background: none;
   }
 
   .overlay-content h3 {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
   }
 
   .overlay-content p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .contact-info-section {
     padding: 2rem 1.5rem;
+    background: white;
   }
 
   .reservations-subtitle {

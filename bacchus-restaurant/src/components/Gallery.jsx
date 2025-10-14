@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -12,9 +12,11 @@ const Gallery = () => {
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const scrollRef = useRef(null);
+  const animationRef = useRef(null);
 
-  // Gallery images - using placeholder images from Unsplash
-  // Replace these URLs with your actual restaurant photos
+  // Gallery images
   const images = [
     {
       id: 1,
@@ -72,6 +74,38 @@ const Gallery = () => {
     }
   ];
 
+  // Auto-scroll functionality
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let scrollSpeed = hoveredIndex !== null ? 0.3 : 1; // Slow down on hover
+    let scrollPosition = 0;
+
+    const animate = () => {
+      if (scrollContainer && hoveredIndex === null) {
+        scrollPosition += scrollSpeed;
+
+        // Reset scroll position when reaching the end
+        if (scrollPosition >= scrollContainer.scrollWidth / 2) {
+          scrollPosition = 0;
+        }
+
+        scrollContainer.scrollLeft = scrollPosition;
+      }
+
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [hoveredIndex]);
+
   const openLightbox = (index) => {
     setCurrentIndex(index);
     setSelectedImage(images[index]);
@@ -100,6 +134,9 @@ const Gallery = () => {
     if (e.key === 'Escape') closeLightbox();
   };
 
+  // Duplicate images for seamless loop
+  const duplicatedImages = [...images, ...images];
+
   return (
     <section id="gallery" className="gallery" ref={ref}>
       <div className="gallery-container">
@@ -120,23 +157,32 @@ const Gallery = () => {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="gallery-grid"
+          className="filmstrip-wrapper"
         >
-          {images.map((image, index) => (
-            <motion.div
-              key={image.id}
-              className="gallery-item"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              onClick={() => openLightbox(index)}
-            >
-              <img src={image.url} alt={image.title} loading="lazy" />
-              <div className="gallery-overlay">
-                <h3>{image.title}</h3>
-              </div>
-            </motion.div>
-          ))}
+          <div className="filmstrip-container" ref={scrollRef}>
+            <div className="filmstrip-track">
+              {duplicatedImages.map((image, index) => (
+                <motion.div
+                  key={`${image.id}-${index}`}
+                  className="filmstrip-item"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  onClick={() => openLightbox(index % images.length)}
+                  whileHover={{ scale: 1.15, zIndex: 10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="film-frame">
+                    <div className="film-perforations film-top"></div>
+                    <img src={image.url} alt={image.title} loading="lazy" />
+                    <div className="film-perforations film-bottom"></div>
+                    <div className="filmstrip-overlay">
+                      <h3>{image.title}</h3>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
 
