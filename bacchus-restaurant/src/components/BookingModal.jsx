@@ -129,7 +129,7 @@ const BookingModal = ({ isOpen, onClose }) => {
       }
     } catch (error) {
       console.error('Booking error:', error);
-      alert('Unable to submit booking. Please try calling us at 09064 50433.');
+      alert('Unable to submit booking. Please try calling us at 090 645 0433.');
     } finally {
       setIsSubmitting(false);
     }
@@ -192,7 +192,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                 <p><strong>Party Size:</strong> {formData.partySize} {formData.partySize === '1' ? 'person' : 'people'}</p>
               </div>
               <p className="contact-info">
-                Questions? Call us at <a href="tel:0906450433">09064 50433</a>
+                Questions? Call us at <a href="tel:0906450433">090 645 0433</a>
               </p>
             </motion.div>
           ) : (
@@ -330,7 +330,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                   <div className="large-party-notice">
                     <p>
                       <strong>Large Party Notice:</strong> For parties of 7 or more, please call us
-                      directly at <a href="tel:0906450433">09064 50433</a> to ensure we can
+                      directly at <a href="tel:0906450433">090 645 0433</a> to ensure we can
                       accommodate your group.
                     </p>
                   </div>

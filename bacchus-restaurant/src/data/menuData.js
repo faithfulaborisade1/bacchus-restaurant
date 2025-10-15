@@ -434,7 +434,7 @@ export const restaurantInfo = {
   name: 'Bacchus Restaurant',
   tagline: 'Where the Shannon Flows, Memories Grow',
   address: 'Custume Pier, Athlone, CO. Westmeath',
-  phone: '09064 50433',
+  phone: '090 645 0433',
   email: 'info@bacchusrestaurant.ie',
   website: 'www.bacchusrestaurant.ie',
   instagram: '@bacchus_restaurant_athlone',

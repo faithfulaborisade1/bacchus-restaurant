@@ -39,8 +39,8 @@ export const takeawayStarters = [
 export const takeawayMainCourses = [
   {
     id: 1,
-    name: 'Traditional Chicken \'Sach Tava\'',
-    price: 17.99,
+    name: 'Traditional Chicken Sach Tava',
+    price: 17.00,
     allergens: ['celery'],
     description: 'Shredded chicken, peppers, garlic, onion, and tomato served with rice',
     icon: '🍛'
@@ -64,9 +64,9 @@ export const takeawayMainCourses = [
   {
     id: 4,
     name: 'Mediterranean Lamb Casserole',
-    price: 19.99,
+    price: 18.50,
     allergens: ['milk'],
-    description: 'Diced lamb with vegetables in light chili tomato sauce, served topped with cheese, served with rice',
+    description: 'Diced lamb with vegetables in light chili tomato sauce, topped with cheese, served with rice',
     icon: '🍖'
   }
 ];
@@ -109,6 +109,14 @@ export const takeawayPastas = [
 export const takeawayPizzas = [
   {
     id: 1,
+    name: 'Margherita Pizza',
+    price: 12.00,
+    allergens: ['gluten', 'milk'],
+    description: 'Classic tomato and mozzarella',
+    icon: '🍕'
+  },
+  {
+    id: 2,
     name: 'BBQ Pizza',
     price: 12.99,
     allergens: ['gluten', 'milk'],
@@ -116,15 +124,15 @@ export const takeawayPizzas = [
     icon: '🍕'
   },
   {
-    id: 2,
+    id: 3,
     name: 'Mighty Meat',
     price: 15.50,
     allergens: ['gluten', 'milk'],
-    description: 'Chicken, bacon, peppers, onions, BBQ sauce',
+    description: 'Chicken, bacon, pepperoni and ham',
     icon: '🍕'
   },
   {
-    id: 3,
+    id: 4,
     name: 'Sucuk and Cheese Pide',
     price: 15.00,
     allergens: ['gluten', 'milk'],
@@ -137,15 +145,15 @@ export const takeawayDesserts = [
   {
     id: 1,
     name: 'Baklava',
-    price: 4.99,
+    price: 6.00,
     allergens: ['gluten', 'milk', 'nuts'],
-    description: 'Traditional Turkish layered pastry with pistachio and syrup',
+    description: '3 pieces of Traditional Turkish layered pastry with pistachio and syrup',
     icon: '🥮'
   },
   {
     id: 2,
     name: 'Chocolate Gateaux',
-    price: 3.99,
+    price: 6.00,
     allergens: ['gluten', 'eggs', 'milk'],
     description: 'Rich cake with Chantilly cream and chocolate sauce',
     icon: '🎂'
@@ -244,13 +252,6 @@ export const takeawayDrinks = [
     price: 2.00,
     allergens: [],
     icon: '💧'
-  },
-  {
-    id: 3,
-    name: 'Homemade Lemonade',
-    price: 3.50,
-    allergens: [],
-    icon: '🍋'
   }
 ];
 
@@ -264,7 +265,7 @@ export const takeawayInfo = {
     sunday: { open: '13:00', close: '20:00', display: 'Sunday: 1pm - 8pm (All day)' }
   },
   contact: {
-    phone: '(090) 6450433',
+    phone: '090 645 0433',
     website: 'www.bacchusrestaurant.ie'
   },
   specialOffer: {
