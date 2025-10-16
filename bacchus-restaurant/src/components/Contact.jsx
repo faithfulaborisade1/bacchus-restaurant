@@ -9,6 +9,7 @@ import {
   FaFacebook,
   FaHeart,
   FaWhatsapp,
+  FaDirections,
 } from 'react-icons/fa';
 import { restaurantInfo } from '../data/menuData';
 import logo from '../assets/images/logo-transparent.png';
@@ -88,12 +89,12 @@ const Contact = () => {
                   <h4>Location</h4>
                   <p>{restaurantInfo.address}</p>
                   <a
-                    href="https://maps.google.com/?q=Custume+Pier+Athlone"
+                    href="https://www.google.com/maps/dir//Bacchus+Restaurant,+Custume+Pier+Appartments,+Custume+Pl,+Athlone,+Co.+Westmeath/@53.4237683,-7.9409037,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x485c4903dae40691:0x7a1923ec747b4939!2m2!1d-7.9409037!2d53.4237683"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="detail-link"
+                    className="directions-btn"
                   >
-                    Get Directions →
+                    <FaDirections /> Get Directions
                   </a>
                 </div>
               </div>
