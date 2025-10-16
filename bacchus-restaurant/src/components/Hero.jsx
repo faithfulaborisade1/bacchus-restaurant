@@ -60,7 +60,14 @@ const Hero = ({ onBookNowClick }) => {
         >
           <div className="info-item">
             <FaMapMarkerAlt />
-            <span>The Only Restaurant Along the River Shannon</span>
+            <a
+              href="https://www.google.com/maps/dir//Bacchus+Restaurant,+Custume+Pier+Appartments,+Custume+Pl,+Athlone,+Co.+Westmeath/@53.4237683,-7.9409037,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x485c4903dae40691:0x7a1923ec747b4939!2m2!1d-7.9409037!2d53.4237683"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-location-link"
+            >
+              The Only Restaurant Along the River Shannon
+            </a>
           </div>
         </motion.div>
       </div>

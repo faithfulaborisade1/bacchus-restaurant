@@ -131,6 +131,18 @@
   font-size: 1.3rem;
 }
 
+.hero-location-link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-location-link:hover {
+  color: #d4a574;
+  text-decoration: underline;
+}
+
 .hero-scroll-indicator {
   position: absolute;
   bottom: 2rem;
