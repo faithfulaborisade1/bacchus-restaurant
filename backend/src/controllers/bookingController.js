@@ -77,7 +77,7 @@ export const getAllBookings = async (req, res) => {
       query += ' WHERE ' + conditions.join(' AND ');
     }
 
-    query += ' ORDER BY date DESC, time DESC';
+    query += ' ORDER BY id DESC';
 
     const result = await pool.query(query, values);
     res.json(result.rows);
