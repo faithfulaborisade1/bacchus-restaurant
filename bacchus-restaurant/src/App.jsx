@@ -19,6 +19,7 @@ function App() {
       <Analytics />
       <Routes>
         {/* Admin Routes */}
+        <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
