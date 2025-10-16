@@ -1,22 +1,10 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-// Create email transporter
-const emailPort = parseInt(process.env.EMAIL_PORT) || 465;
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: emailPort,
-  secure: emailPort === 465, // true for 465, false for other ports (587 uses STARTTLS)
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-  tls: {
-    rejectUnauthorized: false // Accept self-signed certificates
-  }
-});
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Send booking email
 export const sendBookingEmail = async ({ to, subject, booking, type }) => {
@@ -141,14 +129,14 @@ export const sendBookingEmail = async ({ to, subject, booking, type }) => {
       `;
     }
 
-    const mailOptions = {
-      from: process.env.EMAIL_FROM || 'Bacchus Restaurant <noreply@bacchusrestaurant.ie>',
+    // Send email using Resend
+    await resend.emails.send({
+      from: process.env.EMAIL_FROM || 'Bacchus Restaurant <info@bacchusrestaurant.ie>',
       to: to,
       subject: subject,
       html: htmlContent,
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
     console.log(`✅ Email sent to ${to}`);
   } catch (error) {
     console.error('❌ Error sending email:', error);
