@@ -23,25 +23,26 @@ export const createBooking = async (req, res) => {
     const result = await pool.query(query, values);
     const booking = result.rows[0];
 
-    // Send notification email to admin
-    await sendBookingEmail({
+    // Send emails asynchronously without blocking the response
+    // This prevents timeout issues if email server is slow
+    sendBookingEmail({
       to: process.env.ADMIN_EMAIL,
       subject: 'New Booking Request',
       booking: booking,
       type: 'admin'
-    });
+    }).catch(err => console.error('Error sending admin email:', err));
 
-    // Send confirmation email to customer
-    await sendBookingEmail({
+    sendBookingEmail({
       to: email,
       subject: 'Booking Request Received - Bacchus Restaurant',
       booking: booking,
       type: 'customer_pending'
-    });
+    }).catch(err => console.error('Error sending customer email:', err));
 
     // Optional: Send SMS notification
-    // await sendBookingSMS(phone, booking);
+    // sendBookingSMS(phone, booking).catch(err => console.error('Error sending SMS:', err));
 
+    // Respond immediately without waiting for emails
     res.status(201).json({
       message: 'Booking request received successfully',
       booking: booking
@@ -112,26 +113,27 @@ export const updateBookingStatus = async (req, res) => {
 
     const booking = result.rows[0];
 
-    // Send notification based on status
+    // Send notification based on status (asynchronously without blocking)
     if (status === 'confirmed') {
-      await sendBookingEmail({
+      sendBookingEmail({
         to: booking.email,
         subject: 'Booking Confirmed - Bacchus Restaurant',
         booking: booking,
         type: 'customer_confirmed'
-      });
+      }).catch(err => console.error('Error sending confirmation email:', err));
 
       // Optional: Send SMS confirmation
-      // await sendBookingSMS(booking.phone, booking, 'confirmed');
+      // sendBookingSMS(booking.phone, booking, 'confirmed').catch(err => console.error('Error sending SMS:', err));
     } else if (status === 'rejected') {
-      await sendBookingEmail({
+      sendBookingEmail({
         to: booking.email,
         subject: 'Booking Update - Bacchus Restaurant',
         booking: booking,
         type: 'customer_rejected'
-      });
+      }).catch(err => console.error('Error sending rejection email:', err));
     }
 
+    // Respond immediately without waiting for emails
     res.json({
       message: 'Booking status updated successfully',
       booking: booking
