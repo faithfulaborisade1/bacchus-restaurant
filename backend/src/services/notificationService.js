@@ -1,10 +1,16 @@
-import { Resend } from 'resend';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-// Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend (lazy load to avoid import errors)
+let resend = null;
+const getResend = async () => {
+  if (!resend && process.env.RESEND_API_KEY) {
+    const { Resend } = await import('resend');
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+};
 
 // Send booking email
 export const sendBookingEmail = async ({ to, subject, booking, type }) => {
@@ -130,14 +136,18 @@ export const sendBookingEmail = async ({ to, subject, booking, type }) => {
     }
 
     // Send email using Resend
-    await resend.emails.send({
-      from: process.env.EMAIL_FROM || 'Bacchus Restaurant <info@bacchusrestaurant.ie>',
-      to: to,
-      subject: subject,
-      html: htmlContent,
-    });
-
-    console.log(`✅ Email sent to ${to}`);
+    const resendClient = await getResend();
+    if (resendClient) {
+      await resendClient.emails.send({
+        from: process.env.EMAIL_FROM || 'info@bacchusrestaurant.ie',
+        to: to,
+        subject: subject,
+        html: htmlContent,
+      });
+      console.log(`✅ Email sent to ${to}`);
+    } else {
+      console.log(`⚠️  Resend not configured, skipping email to ${to}`);
+    }
   } catch (error) {
     console.error('❌ Error sending email:', error);
     // Don't throw error - we don't want booking to fail if email fails
