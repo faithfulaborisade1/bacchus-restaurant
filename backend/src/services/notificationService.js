@@ -4,14 +4,18 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Create email transporter
+const emailPort = parseInt(process.env.EMAIL_PORT) || 465;
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
-  port: parseInt(process.env.EMAIL_PORT),
-  secure: true, // true for 465, false for other ports
+  port: emailPort,
+  secure: emailPort === 465, // true for 465, false for other ports (587 uses STARTTLS)
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
   },
+  tls: {
+    rejectUnauthorized: false // Accept self-signed certificates
+  }
 });
 
 // Send booking email
