@@ -76,6 +76,43 @@
   font-size: 1rem;
 }
 
+.booking-info-notice {
+  background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+  border: 2px solid #c9a961;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.booking-info-notice h3 {
+  color: #c9a961;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.booking-info-notice p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.booking-info-notice p:last-child {
+  margin-bottom: 0;
+}
+
+.booking-info-notice a {
+  color: #c9a961;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.booking-info-notice a:hover {
+  text-decoration: underline;
+}
+
 .booking-form {
   display: flex;
   flex-direction: column;

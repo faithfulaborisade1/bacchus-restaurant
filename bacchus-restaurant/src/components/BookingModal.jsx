@@ -203,6 +203,13 @@ const BookingModal = ({ isOpen, onClose }) => {
                 <p className="modal-description">Book your unforgettable riverside dining experience</p>
               </div>
 
+              <div className="booking-info-notice">
+                <h3>📋 Read Before Booking</h3>
+                <p><strong>Booking closes:</strong> Monday to Saturday at 9pm | Sunday at 8pm</p>
+                <p>If you are booking for a time in the future, don't panic! You can call and confirm if a walk-in is possible. You will be added on a waitlist and a confirmation will be sent if availability opens up.</p>
+                <p>📞 Call us: <a href="tel:0906450433">090 645 0433</a></p>
+              </div>
+
               <form className="booking-form" onSubmit={handleSubmit}>
                 <div className="form-row">
                   <div className="form-group">
