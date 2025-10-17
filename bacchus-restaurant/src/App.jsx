@@ -9,6 +9,7 @@ import TakeawayMenuPage from './pages/TakeawayMenuPage';
 import GalleryPage from './pages/GalleryPage';
 import ReviewsPage from './pages/ReviewsPage';
 import ContactPage from './pages/ContactPage';
+import InfoPage from './pages/InfoPage';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import './App.css';
@@ -92,6 +93,12 @@ function App() {
               <ContactPage />
               <Footer />
             </div>
+          }
+        />
+        <Route
+          path="/info"
+          element={
+            <InfoPage />
           }
         />
       </Routes>
