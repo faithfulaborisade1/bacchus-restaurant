@@ -181,7 +181,8 @@
 }
 
 .large-party-notice,
-.policy-notice {
+.policy-notice,
+.special-requests-notice {
   background: #fff8e7;
   padding: 1rem;
   border-radius: 10px;
@@ -189,14 +190,16 @@
 }
 
 .large-party-notice p,
-.policy-notice p {
+.policy-notice p,
+.special-requests-notice p {
   margin: 0;
   color: #666;
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
-.large-party-notice a {
+.large-party-notice a,
+.special-requests-notice a {
   color: #c9a961;
   font-weight: 600;
 }

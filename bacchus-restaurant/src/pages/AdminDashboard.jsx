@@ -10,8 +10,7 @@ import {
   FaUser,
   FaPhone,
   FaEnvelope,
-  FaUsers,
-  FaStickyNote
+  FaUsers
 } from 'react-icons/fa';
 import './AdminDashboard.css';
 
@@ -265,16 +264,6 @@ const AdminDashboard = () => {
                         </div>
                       </div>
                     </div>
-
-                    {booking.special_requests && (
-                      <div className="special-requests">
-                        <FaStickyNote className="detail-icon" />
-                        <div>
-                          <span className="detail-label">Special Requests</span>
-                          <p className="detail-value">{booking.special_requests}</p>
-                        </div>
-                      </div>
-                    )}
 
                     <div className="booking-timestamp">
                       Created: {new Date(booking.created_at).toLocaleString('en-IE')}

@@ -11,7 +11,6 @@ const BookingModal = ({ isOpen, onClose }) => {
     date: '',
     time: '',
     partySize: '2',
-    specialRequests: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -120,7 +119,6 @@ const BookingModal = ({ isOpen, onClose }) => {
             date: '',
             time: '',
             partySize: '2',
-            specialRequests: '',
           });
           onClose();
         }, 8000);
@@ -321,16 +319,12 @@ const BookingModal = ({ isOpen, onClose }) => {
                   </div>
                 </div>
 
-                <div className="form-group">
-                  <label htmlFor="specialRequests">Special Requests / Dietary Requirements</label>
-                  <textarea
-                    id="specialRequests"
-                    name="specialRequests"
-                    value={formData.specialRequests}
-                    onChange={handleChange}
-                    rows="3"
-                    placeholder="Any allergies, special occasions, or seating preferences..."
-                  />
+                <div className="special-requests-notice">
+                  <p>
+                    <strong>Special Requests:</strong> For any special requests, dietary requirements,
+                    allergies, or seating preferences, please call the restaurant at{' '}
+                    <a href="tel:0906450433">090 645 0433</a>.
+                  </p>
                 </div>
 
                 {formData.partySize === '7+' && (

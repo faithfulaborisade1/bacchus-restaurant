@@ -4,7 +4,7 @@ import { sendBookingEmail, sendBookingSMS } from '../services/notificationServic
 // Create a new booking
 export const createBooking = async (req, res) => {
   try {
-    const { name, email, phone, date, time, partySize, specialRequests } = req.body;
+    const { name, email, phone, date, time, partySize } = req.body;
 
     // Validate required fields
     if (!name || !email || !phone || !date || !time || !partySize) {
@@ -18,7 +18,7 @@ export const createBooking = async (req, res) => {
       RETURNING *
     `;
 
-    const values = [name, email, phone, date, time, partySize, specialRequests || '', 'pending'];
+    const values = [name, email, phone, date, time, partySize, '', 'pending'];
 
     const result = await pool.query(query, values);
     const booking = result.rows[0];
